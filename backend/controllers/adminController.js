@@ -20,7 +20,7 @@ const createUser = async (req, res) => {
     if (exists.length) return res.status(400).json({ success: false, message: 'Email already exists' });
 
     const [result] = await db.query(
-      'INSERT INTO users (full_name, email, password_hash, role_id) VALUES (?, ?, ?, ?)',
+      'INSERT INTO users (full_name, email, password_hash, role_id) VALUES (?, ?, SHA2(?,256), ?)',
       [full_name, email, password, role_id]
     );
     if (parseInt(role_id) === 1) {

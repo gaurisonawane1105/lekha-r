@@ -20,12 +20,13 @@ router.put('/projects/:id', authenticate, authorize('admin', 'hod'), updateProje
 router.post('/projects/:id/students', authenticate, authorize('admin', 'hod'), addStudentToGroup);
 
 // Files - stored in DB as BLOB
-router.post('/files/upload/:group_id', authenticate, authorize('student'), upload.single('file'), uploadFile);
+// IMPORTANT: specific/static routes BEFORE parameterized /:id routes
 router.get('/files/pending', authenticate, authorize('guide'), getPendingFiles);
-router.get('/files/:group_id', authenticate, getFilesByGroup);
-router.put('/files/:file_id/review', authenticate, authorize('guide'), reviewFile);
 router.get('/files/download/:file_id', authenticate, downloadFile);
 router.get('/files/view/:file_id', authenticate, viewFile);
+router.post('/files/upload/:group_id', authenticate, authorize('student'), upload.single('file'), uploadFile);
+router.get('/files/:group_id', authenticate, getFilesByGroup);
+router.put('/files/:file_id/review', authenticate, authorize('guide'), reviewFile);
 
 // Meetings
 router.get('/meetings/:group_id', authenticate, getMeetingsByGroup);

@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import API from '../utils/api';
 import toast from 'react-hot-toast';
 
-const BASE_URL = 'http://localhost:5000/api';
+const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api'
 
 // ─── Review Modal (Guide) ────────────────────────────────────────────────────
 function ReviewModal({ file, onClose, onSave }) {
