@@ -13,6 +13,7 @@ import Meetings from './pages/Meetings';
 import Users from './pages/Users';
 import { Notifications, AuditLogs } from './pages/NotificationsAndLogs';
 import './index.css';
+import AIKeywords from './pages/AIKeywords';
 
 function ProtectedLayout({ children, roles }) {
   const { user, loading } = useAuth();
@@ -66,6 +67,7 @@ export default function App() {
           <Route path="/notifications" element={<ProtectedLayout><Notifications /></ProtectedLayout>} />
           <Route path="/users" element={<ProtectedLayout roles={['admin']}><Users /></ProtectedLayout>} />
           <Route path="/logs" element={<ProtectedLayout roles={['admin']}><AuditLogs /></ProtectedLayout>} />
+          <Route path="/ai-keywords" element={<ProtectedLayout><AIKeywords /></ProtectedLayout>} />
 
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="*" element={<Navigate to="/dashboard" replace />} />

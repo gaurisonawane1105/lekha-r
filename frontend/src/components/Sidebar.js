@@ -9,18 +9,21 @@ const navConfig = {
     { to: '/projects', icon: '📁', label: 'My Projects' },
     { to: '/files', icon: '📄', label: 'Files' },
     { to: '/meetings', icon: '📅', label: 'Meeting Logs' },
+    { to: '/ai-keywords', icon: '🤖', label: 'AI Keywords' },
   ],
   guide: [
     { to: '/dashboard', icon: '⊞', label: 'Dashboard' },
     { to: '/projects', icon: '📁', label: 'Project Groups' },
     { to: '/files', icon: '📄', label: 'Review Files' },
     { to: '/meetings', icon: '📅', label: 'Meeting Logs' },
+    { to: '/ai-keywords', icon: '🤖', label: 'AI Keywords' },
   ],
   hod: [
     { to: '/dashboard', icon: '⊞', label: 'Dashboard' },
     { to: '/projects', icon: '📁', label: 'All Projects' },
     { to: '/files', icon: '📄', label: 'Files Overview' },
     { to: '/meetings', icon: '📅', label: 'Meetings' },
+    { to: '/ai-keywords', icon: '🤖', label: 'AI Keywords' },
   ],
   admin: [
     { to: '/dashboard', icon: '⊞', label: 'Dashboard' },
@@ -29,6 +32,7 @@ const navConfig = {
     { to: '/files', icon: '📄', label: 'Files' },
     { to: '/meetings', icon: '📅', label: 'Meetings' },
     { to: '/logs', icon: '📋', label: 'Audit Logs' },
+    { to: '/ai-keywords', icon: '🤖', label: 'AI Keywords' },
   ],
 };
 
